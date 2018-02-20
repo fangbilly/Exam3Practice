@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  LOOPS WITHIN LOOPS in SEQUENCES-OF-SUBSEQUENCES problems.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and zhengshanfang.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -95,7 +95,7 @@ def integers(sequence_of_sequences):
       :rtype: list of int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -118,6 +118,13 @@ def integers(sequence_of_sequences):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:  10 minutes.
     # ------------------------------------------------------------------
+    return_list = []
+    for k in range(len(sequence_of_sequences)):
+        sub_sequences = sequence_of_sequences[k]
+        for a in range(len(sub_sequences)):
+            if type(sub_sequences[a]) is int:
+                return_list.append(sub_sequences[a])
+    return return_list
 
 
 def run_test_big_letters():
@@ -189,7 +196,7 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -211,6 +218,15 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # ------------------------------------------------------------------
+    return_list = ""
+    for k in range(len(sequence_of_sequences)):
+        sub_sequences = sequence_of_sequences[k]
+        for a in range(len(sub_sequences)):
+            if type(sub_sequences) is str:
+                if sub_sequences[a].isupper():
+                    return_list += sub_sequences[a]
+    return return_list
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
